@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Sudoku solver</title>
+        
+        <link rel="stylesheet" href="sudoku-solver.css">
+    </head>
+
+    <body>
+        <div class="header">
+            SUDOKU SOLVER
+        </div>
+        <div class="unsol" id="unsol"><button onclick="unsol()">Unsolvable Sudoku</button></div>
+        <div class="sudoku-board">
+            <div class="cell"><input type="number" id="00" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="01" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="02" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="03" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="04" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="05" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="06" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="07" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="08" onkeyup="checkfunc(this.id)"></div>
+            
+            <div class="cell"><input type="number" id="10" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="11" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="12" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="13" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="14" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="15" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="16" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="17" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="18" onkeyup="checkfunc(this.id)"></div>
+            
+            <div class="cell"><input type="number" id="20" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="21" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="22" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="23" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="24" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="25" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="26" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="27" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="28" onkeyup="checkfunc(this.id)"></div>
+            
+            <div class="cell"><input type="number" id="30" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="31" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="32" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="33" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="34" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="35" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="36" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="37" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="38" onkeyup="checkfunc(this.id)"></div>
+            
+            <div class="cell"><input type="number" id="40" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="41" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="42" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="43" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="44" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="45" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="46" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="47" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="48" onkeyup="checkfunc(this.id)"></div>
+            
+            <div class="cell"><input type="number" id="50" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="51" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="52" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="53" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="54" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="55" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="56" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="57" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="58" onkeyup="checkfunc(this.id)"></div>
+            
+            <div class="cell"><input type="number" id="60" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="61" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="62" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="63" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="64" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="65" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="66" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="67" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="68" onkeyup="checkfunc(this.id)"></div>
+            
+            <div class="cell"><input type="number" id="70" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="71" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="72" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="73" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="74" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="75" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="76" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="77" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="78" onkeyup="checkfunc(this.id)"></div>
+            
+            <div class="cell"><input type="number" id="80" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="81" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="82" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="83" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="84" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="85" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="86" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="87" onkeyup="checkfunc(this.id)"></div>
+            <div class="cell"><input type="number" id="88" onkeyup="checkfunc(this.id)"></div>
+
+            
+        </div>
+        <div class="footer">
+            <button class="solve" onclick="solvefunc()">SOLVE</button>
+            <button class="reset" onclick="resetfunc()">RESET</button>
+        </div>
+        
+    </body>
+    <script src="sudoku-solver.js"></script>
+</html>
